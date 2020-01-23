@@ -25,18 +25,20 @@ steps:
   inputs:
     workingDirectory: 'CMake'
     cmakeArgs: '--build ./bin'
-- task: CmdLine@2
-  inputs:
-    workingDirectory: 'CMake/bin/src/Debug'
-    script: 'Project.exe'
+#- task: CmdLine@2
+#  inputs:
+#    workingDirectory: 'CMake/bin/src/Debug'
+#    script: 'Project.exe'
 - task: PublishSymbols@2
   inputs:
     SearchPattern: '**/bin/**/*.pdb'
     SymbolServerType: 'TeamServices'
 - task: CopyFiles@2
   inputs:
-    sourceFolder: '$(Build.SourcesDirectory)'
-    contents: '**/$(BuildConfiguration)/**/?(*.exe|*.dll|*.pdb)'
+    #sourceFolder: '$(Build.SourcesDirectory)'
+    sourceFolder: 'CMake/bin/src/Debug'
+    contents: '?(*.exe|*.dll|*.pdb)'
+    #contents: '**/$(BuildConfiguration)/**/?(*.exe|*.dll|*.pdb)'
     TargetFolder: '$(Build.ArtifactStagingDirectory)'
 - task: PublishBuildArtifacts@1
   inputs:

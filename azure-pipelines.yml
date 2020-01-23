@@ -19,11 +19,11 @@ steps:
   displayName: 'Run a multi-line script'
 - task: CMake@1
   inputs:
-    workingDirectory: 'CMake'
-    cmakeArgs: -S ../ -B ./bin'
+    #workingDirectory: 'CMake'
+    cmakeArgs: -S . -B ./bin'
 - task: CMake@1
   inputs:
-    workingDirectory: 'CMake'
+    #workingDirectory: 'CMake'
     cmakeArgs: '--build .'
 - task: CmdLine@2
   inputs:

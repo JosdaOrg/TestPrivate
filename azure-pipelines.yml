@@ -29,3 +29,7 @@ steps:
   inputs:
     workingDirectory: 'CMake/bin/src/Debug'
     script: 'Project.exe'
+- task: PublishSymbols@2
+  inputs:
+    SearchPattern: '**/bin/**/*.pdb'
+    SymbolServerType: 'TeamServices'

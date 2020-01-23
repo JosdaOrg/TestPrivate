@@ -17,3 +17,14 @@ steps:
     echo Add other tasks to build, test, and deploy your project.
     echo See https://aka.ms/yaml
   displayName: 'Run a multi-line script'
+- task: CMake@1
+  inputs:
+    workingDirectory: 'CMake'
+    cmakeArgs: -S ../ -B ./Generated/VS2019'
+- task: CMake@1
+  inputs:
+    workingDirectory: 'CMake'
+    cmakeArgs: '--build .'
+- task: CmdLine@2
+  inputs:
+    script: './bin/src/Debug/Project.exe'

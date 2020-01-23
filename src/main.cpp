@@ -1,6 +1,6 @@
 int Deref(int* value)
 {
-  return 0;//*value;
+  return *value;
 }
 
 int main()

@@ -9,22 +9,22 @@ trigger:
 pool:
   vmImage: 'windows-latest'
 
-steps:
-- script: echo Hello, world!
-  displayName: 'Run a one-line script'
-
-- script: |
-    echo Add other tasks to build, test, and deploy your project.
-    echo See https://aka.ms/yaml
+#steps:
+#- script: echo Hello, world!
+#  displayName: 'Run a one-line script'
+#
+#- script: |
+#    echo Add other tasks to build, test, and deploy your project.
+#    echo See https://aka.ms/yaml
   displayName: 'Run a multi-line script'
 - task: CMake@1
   inputs:
     workingDirectory: 'CMake'
-    cmakeArgs: -S . -B ./bin'
+    cmakeArgs: -S ../ -B ./bin'
 - task: CMake@1
   inputs:
     workingDirectory: 'CMake'
-    cmakeArgs: '--build .'
+    cmakeArgs: '--build ./bin'
 - task: CmdLine@2
   inputs:
     script: './bin/src/Debug/Project.exe'

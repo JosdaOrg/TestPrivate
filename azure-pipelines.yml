@@ -20,7 +20,7 @@ steps:
 - task: CMake@1
   inputs:
     workingDirectory: 'CMake'
-    cmakeArgs: -S ../ -B ./Generated/VS2019'
+    cmakeArgs: -S ../ -B ./bin'
 - task: CMake@1
   inputs:
     workingDirectory: 'CMake'

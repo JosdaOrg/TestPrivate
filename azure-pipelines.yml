@@ -9,7 +9,7 @@ trigger:
 pool:
   vmImage: 'windows-latest'
 
-#steps:
+steps:
 #- script: echo Hello, world!
 #  displayName: 'Run a one-line script'
 #

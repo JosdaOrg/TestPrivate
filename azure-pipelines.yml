@@ -27,4 +27,5 @@ steps:
     cmakeArgs: '--build ./bin'
 - task: CmdLine@2
   inputs:
-    script: './bin/src/Debug/Project.exe'
+    workingDirectory: 'CMake/bin/src'
+    script: 'Debug/Project.exe'

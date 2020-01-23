@@ -20,7 +20,7 @@ steps:
 - task: CMake@1
   inputs:
     workingDirectory: 'CMake'
-    cmakeArgs: -S ../ -B ./bin'
+    cmakeArgs: -S ../ -B ./bin -G "Visual Studio 16 2019"'
 - task: CMake@1
   inputs:
     workingDirectory: 'CMake'

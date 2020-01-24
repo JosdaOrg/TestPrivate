@@ -1,10 +1,10 @@
-int Deref(int* value)
+char Deref(char* value)
 {
   return *value;
 }
 
-int main()
+int main(char** argv, int argc)
 {
-  Deref(nullptr);
+  Deref(argv[1]);
   return 0;
 }

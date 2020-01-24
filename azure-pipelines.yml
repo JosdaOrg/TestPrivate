@@ -31,7 +31,7 @@ steps:
 #    script: 'Project.exe'
 - task: CmdLine@2
   inputs:
-    script: '$(Build.Repository.LocalPath)/SourceIndexer.exe CMake/bin/src/Debug/Project.pdb $(Build.Repository.LocalPath)'
+    script: '$(Build.Repository.LocalPath)/External/SourceIndexer.exe CMake/bin/src/Debug/Project.pdb $(Build.Repository.LocalPath)'
 - task: PublishSymbols@2
   inputs:
     SearchPattern: '**/bin/**/*.pdb'

@@ -40,6 +40,10 @@ steps:
     contents: '?(*.exe|*.dll|*.pdb)'
     #contents: '**/$(BuildConfiguration)/**/?(*.exe|*.dll|*.pdb)'
     TargetFolder: '$(Build.ArtifactStagingDirectory)'
+- task: CmdLine@2
+  inputs:
+    workingDirectory: 'External'
+    script: 'SourceIndexer.exe $(Build.ArtifactStagingDirectory)/Project.pdb ../'
 - task: PublishBuildArtifacts@1
   inputs:
     pathtoPublish: '$(Build.ArtifactStagingDirectory)'
